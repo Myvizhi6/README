@@ -1,0 +1,27 @@
+
+package com.example.employee;
+
+public class Employee {
+    protected String name;
+
+    public Employee(String name) {
+        this.name = name;
+    }
+}
+
+// Manager.java in com.example.manager package
+package com.example.manager;
+
+import com.example.employee.Employee;
+
+public class Manager {
+    public void manageEmployee(Employee employee) {
+        System.out.println("Managing employee: " + employee.name);
+    }
+
+    public static void main(String[] args) {
+        Employee employee = new Employee("John");
+        Manager manager = new Manager();
+        manager.manageEmployee(employee);
+    }
+}
