@@ -1,0 +1,31 @@
+class TicketBooker {
+    private int tickets = 1;
+
+    synchronized void bookTicket() {
+        if (tickets > 0) {
+            System.out.println("Ticket booked");
+            tickets--;
+        } else {
+            System.out.println("No tickets available");
+        }
+    }
+}
+
+class Customer extends Thread {
+    TicketBooker booker;
+
+    Customer(TicketBooker booker) {
+        this.booker = booker;
+    }
+
+    public void run() {
+        booker.bookTicket();
+    }
+}
+
+
+TicketBooker booker = new TicketBooker();
+Customer c1 = new Customer(booker);
+Customer c2 = new Customer(booker);
+c1.start();
+c2.start();
