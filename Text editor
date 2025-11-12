@@ -1,0 +1,17 @@
+import javafx.application.Application;
+import javafx.scene.Scene;
+import javafx.scene.control.Menu;
+import javafx.scene.control.MenuBar;
+import javafx.scene.control.TextArea;
+import javafx.scene.layout.BorderPane;
+import javafx.stage.Stage;
+
+public class Editor extends Application {
+    public void start(Stage stage) {
+        MenuBar mb = new MenuBar(new Menu("File"));
+        TextArea ta = new TextArea();
+        stage.setScene(new Scene(new BorderPane(null, mb, null, null, ta)));
+        stage.show();
+    }
+    public static void main(String[] args) { launch(); }
+}
