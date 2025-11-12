@@ -1,0 +1,22 @@
+class DownloadThread extends Thread {
+    String part;
+
+    DownloadThread(String part) {
+        this.part = part;
+    }
+
+    public void run() {
+        System.out.println(part + " downloading...");
+        try {
+            Thread.sleep(1000);
+        } catch (InterruptedException e) {}
+        System.out.println(part + " completed.");
+        if (part.equals("Part 2")) {
+            System.out.println("File download completed.");
+        }
+    }
+}
+
+
+new DownloadThread("Part 1").start();
+new DownloadThread("Part 2").start();
