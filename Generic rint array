@@ -1,0 +1,10 @@
+void printArray(Object[] arr) {
+    for (Object obj : arr) {
+        System.out.print(obj + " ");
+    }
+    System.out.println();
+}
+
+
+printArray(new String[]{"Java", "Python", "C++"});
+printArray(new Integer[]{1, 2, 3, 4});
